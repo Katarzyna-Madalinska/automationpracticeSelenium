@@ -21,6 +21,10 @@ public class SearchBlouseTest extends BaseTest {
         searchPage = new SearchPage(driver);
     }
 
+    //  test: click on input Search,  put thw word: Blouse and checked the result ( be assure that
+    // one blouse is displayed. I create an assertion, that result of search have a correct product
+    // name and prise is not empty
+
     @Test
     public void shouldSearchFindOneBlouse() {
         searchPage.clickOnSearchInput();
@@ -31,10 +35,10 @@ public class SearchBlouseTest extends BaseTest {
         //System.out.println(searchPage.searchProductCountText());
         assertThat(searchPage.isSearchBlouseDisplayed()).isTrue();
         assertThat(searchPage.resultSearchProductNameBlouse()).isEqualTo("Blouse");
-        //System.out.println(searchPage.resultSearchProductNameBlouse());
+        System.out.println(searchPage.resultSearchProductNameBlouse());
         assertThat(searchPage.resultTextProductPriceBlouse()).isEmpty();
 
-        // ale gdy sprawdzam co sie wyswietla pod ceną to pokazuje "" zamiast ceny??
-       // System.out.println(searchPage.resultTextProductPriceBlouse());
+      // ale gdy sprawdzam co sie wyswietla pod ceną to pokazuje "" zamiast ceny??
+      System.out.println(searchPage.resultTextProductPriceBlouse());
     }
 }

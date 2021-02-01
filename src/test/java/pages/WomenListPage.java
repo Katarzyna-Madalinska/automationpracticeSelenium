@@ -17,10 +17,10 @@ public class WomenListPage extends BasePage {
     @FindBy(linkText = "Women")
     WebElement womenLink;
 
-    @FindBy(className = "navigation_page")
+    @FindBy(css = ".navigation_page")
     WebElement navigationPageWomen;
 
-    @FindBy(css = ".product_list .product-price")
+    @FindBy(css = ".right-block .product-price")
     List<WebElement> productPrices;
 
     public void clickOnWomenLink() {

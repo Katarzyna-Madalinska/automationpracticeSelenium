@@ -24,7 +24,7 @@ public class SearchPage extends BasePage {
     WebElement resultProductNameBlouse;
 
 
-   @FindBy(css = ".product_list .product-price")
+   @FindBy(css = ".right-block .product-price")
     WebElement resultProductPriceBlouse;
 
     public String resultTextProductPriceBlouse() {

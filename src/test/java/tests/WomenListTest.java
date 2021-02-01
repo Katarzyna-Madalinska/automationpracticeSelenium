@@ -22,7 +22,7 @@ public class WomenListTest extends BaseTest {
 
         womenListPage = new WomenListPage(driver);
     }
-    // first test: click on Women link, be assure that opened a correct website,  read all prices
+    //  test: click on Women link, be assure that opened a correct website,  read all prices
     // that  are displayed as a result and create an assertion, that  check that all that price
     // are greater than 0
 
@@ -36,13 +36,10 @@ public class WomenListTest extends BaseTest {
     public void shouldPricesBeGreaterThanNull() {
         womenListPage.clickOnWomenLink();
         List<Double> productsWomenList = womenListPage.getProductPrices();
-
-      /*  List<Double> productsWithNullPrice = productsWomenList.stream()
+       List<Double> productsWithNullPrice = productsWomenList.stream()
                  .filter(num -> num < 0)
-                .collect(Collectors.toList());*/
+                .collect(Collectors.toList());
         System.out.println(womenListPage.getProductPrices());
-       // assertThat(productsWithNullPrice).isEmpty();
-      /*  System.out.println(productsWithNullPrice);
-        System.out.println(productsWomenList);*/
+       assertThat(productsWithNullPrice).isEmpty();
     }
 }

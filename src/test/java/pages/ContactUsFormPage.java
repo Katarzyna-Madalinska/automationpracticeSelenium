@@ -20,6 +20,11 @@ public class ContactUsFormPage extends BasePage {
     @FindBy(className = "alert-danger")
     WebElement redAlertBox;
 
+    public String redbox() {
+        return redAlertBox.getText();
+    }
+
+
     @FindBy(className = "alert-success")
     WebElement greenAlertBox;
 
