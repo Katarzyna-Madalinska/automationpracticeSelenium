@@ -52,7 +52,7 @@ public class SignInTest extends BaseTest {
     @Order(3)
     public void shouldAllowedToSignInWithValidData() {
         topMenuPage.clickOnSignInLink();
-        signInPage.enterEmailSignIn("test@tesxstaaala.pll");
+        signInPage.enterEmailSignIn("test@tesxzstaaala.pll");
         signInPage.clickOnCreateAnAccountButton();
         signInPage.clickOnRadioGenderMrs();
         PersonalInformation personalInformation = new PersonalInformation();
