@@ -32,13 +32,9 @@ public class SearchBlouseTest extends BaseTest {
         searchPage.clickOnSearchButton();
 
         assertThat(searchPage.isSearchBlouseDisplayed()).isTrue();
-        //System.out.println(searchPage.searchProductCountText());
         assertThat(searchPage.isSearchBlouseDisplayed()).isTrue();
         assertThat(searchPage.resultSearchProductNameBlouse()).isEqualTo("Blouse");
-        System.out.println(searchPage.resultSearchProductNameBlouse());
-        assertThat(searchPage.resultTextProductPriceBlouse()).isEmpty();
+        assertThat(searchPage.resultTextProductPriceBlouse()).isNotNull();
 
-      // ale gdy sprawdzam co sie wyswietla pod ceną to pokazuje "" zamiast ceny??
-      System.out.println(searchPage.resultTextProductPriceBlouse());
     }
 }

@@ -33,13 +33,13 @@ public class WomenListTest extends BaseTest {
     }
 
     @Test
-    public void shouldPricesBeGreaterThanNull() {
+    public void shouldClickOnWomenLinkAndPricesBeGreaterThanNull() {
         womenListPage.clickOnWomenLink();
         List<Double> productsWomenList = womenListPage.getProductPrices();
-       List<Double> productsWithNullPrice = productsWomenList.stream()
-                 .filter(num -> num < 0)
+        List<Double> productsWithNullPrice = productsWomenList.stream()
+                .filter(num -> num < 0)
                 .collect(Collectors.toList());
         System.out.println(womenListPage.getProductPrices());
-       assertThat(productsWithNullPrice).isEmpty();
+        assertThat(productsWithNullPrice).isEmpty();
     }
 }

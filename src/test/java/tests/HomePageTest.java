@@ -32,6 +32,5 @@ public class HomePageTest extends BaseTest {
                 .collect(Collectors.toList());
 
         assertThat(productsWithEmptyName).isEmpty();
-        System.out.println(popularItemsPage.getProductNames());
     }
 }

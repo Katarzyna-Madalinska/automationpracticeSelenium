@@ -93,6 +93,7 @@ public class SignInPage extends BasePage {
     }
 
     public void clickOnRadioGenderMrs () {
+        wait.until(ExpectedConditions.visibilityOf(genderMrsRadio));
         genderMrsRadio.click();
     }
     public void clickOnRegisterButton() {

@@ -43,7 +43,6 @@ public class WomenListPage extends BasePage {
                 .map(el -> el.getText().replace("$", " "))
                 .map(e -> e.trim())
                 .map(Double::parseDouble)
-                // .filter(num -> num < 0)
                 .collect(Collectors.toList());
     }
 }
