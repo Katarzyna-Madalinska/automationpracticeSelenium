@@ -12,8 +12,4 @@ public class PersonalInformation {
     private String monthDateOfBirth;
     private String yearDateOfBirth;
     private String inputNewsletter;
-
-
-
-
 }

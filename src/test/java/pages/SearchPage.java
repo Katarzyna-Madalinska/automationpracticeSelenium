@@ -7,9 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SearchPage extends BasePage {
-    public SearchPage(WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(id = "search_query_top")
     WebElement searchInput;
@@ -23,10 +20,12 @@ public class SearchPage extends BasePage {
     @FindBy(css = ".right-block > h5:nth-child(1) > a:nth-child(1)")
     WebElement resultProductNameBlouse;
 
-
     @FindBy(css = ".right-block .product-price")
     WebElement resultProductPriceBlouse;
 
+    public SearchPage(WebDriver driver) {
+        super(driver);
+    }
     public String resultTextProductPriceBlouse() {
         return resultProductPriceBlouse.getText();
     }

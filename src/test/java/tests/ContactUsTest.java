@@ -30,7 +30,7 @@ public class ContactUsTest extends BaseTest {
     @Test
     @Order(1)
     public void shouldNotAllowToSendEmptyContactUsForm() {
-        topMenuPage.clickOnCuntactUsLink();
+        topMenuPage.clickOnCountactUsLink();
         contactUsFormPage.clickOnSendButton();
 
         assertThat(contactUsFormPage.isRedAlertBoxDisplayed()).isTrue();
@@ -40,7 +40,7 @@ public class ContactUsTest extends BaseTest {
     @Order(2)
     public void shouldNotAllowToSendContactUsFormWithEmailOnly() {
 
-        topMenuPage.clickOnCuntactUsLink();
+        topMenuPage.clickOnCountactUsLink();
         contactUsFormPage.enterEmail("test@test.pl");
         contactUsFormPage.clickOnSendButton();
 
@@ -50,7 +50,7 @@ public class ContactUsTest extends BaseTest {
     @Test
     @Order(3)
     public void shouldSendContactUsFormWithValidData() {
-        topMenuPage.clickOnCuntactUsLink();
+        topMenuPage.clickOnCountactUsLink();
 
         Message message = new Message();
         message.setSubject(MessageSubject.WEBMASTER);

@@ -7,17 +7,17 @@ import org.openqa.selenium.support.FindBy;
 
 public class TopMenuPage extends BasePage {
 
-    public TopMenuPage(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(linkText = "Contact us")
     WebElement contactUsLink;
 
     @FindBy(className = "login")
     WebElement signInLink;
 
-    public void clickOnCuntactUsLink() {
+    public TopMenuPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void clickOnCountactUsLink() {
         contactUsLink.click();
     }
 

@@ -11,10 +11,6 @@ import org.openqa.selenium.support.ui.Select;
 
 public class SignInPage extends BasePage {
 
-    public SignInPage(WebDriver driver) {
-        super(driver);
-    }
-
     @FindBy(id = "email_create")
     WebElement emailCreateInput;
 
@@ -83,6 +79,10 @@ public class SignInPage extends BasePage {
 
     @FindBy(className = "info-account")
     WebElement registerInfoAccountParagraph;
+
+    public SignInPage(WebDriver driver) {
+        super(driver);
+    }
 
     public void enterEmailSignIn(String email) {
         emailCreateInput.sendKeys(email);

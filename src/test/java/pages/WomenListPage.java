@@ -10,9 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class WomenListPage extends BasePage {
-    public WomenListPage(WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(linkText = "Women")
     WebElement womenLink;
@@ -22,6 +19,10 @@ public class WomenListPage extends BasePage {
 
     @FindBy(css = ".right-block .product-price")
     List<WebElement> productPrices;
+
+    public WomenListPage(WebDriver driver) {
+        super(driver);
+    }
 
     public void clickOnWomenLink() {
         womenLink.click();

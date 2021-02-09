@@ -1,5 +1,6 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import model.Address;
 import model.PersonalInformation;
 import org.junit.jupiter.api.*;
@@ -24,8 +25,6 @@ public class SignInTest extends BaseTest {
         topMenuPage = new TopMenuPage(driver);
         signInPage = new SignInPage(driver);
     }
-//  creating an account with invalid and valid data and checked that is it possible
-//  to register an account
 
    @Test
     @Order(1)
@@ -39,7 +38,7 @@ public class SignInTest extends BaseTest {
 
     @Test
     @Order(2)
-    public void shouldNotAllowedToCreateAnAccountWithValidEmail() {
+    public void shouldNotAllowedToCreateAnAccountWithInValidEmail() {
         topMenuPage.clickOnSignInLink();
         signInPage.enterEmailSignIn("test.pla");
         signInPage.clickOnCreateAnAccountButton();

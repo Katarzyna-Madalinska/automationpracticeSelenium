@@ -1,7 +1,7 @@
 package enums;
 
 public enum MessageSubject {
-    CUSTMER_SERVICE("Customer service"), WEBMASTER("Webmaster");
+    CUSTOMER_SERVICE("Customer service"), WEBMASTER("Webmaster");
     private String value;
 
     MessageSubject(String value) {
@@ -12,3 +12,4 @@ public enum MessageSubject {
         return value;
     }
 }
+

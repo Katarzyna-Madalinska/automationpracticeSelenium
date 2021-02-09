@@ -22,9 +22,6 @@ public class WomenListTest extends BaseTest {
 
         womenListPage = new WomenListPage(driver);
     }
-    //  test: click on Women link, be assure that opened a correct website,  read all prices
-    // that  are displayed as a result and create an assertion, that  check that all that price
-    // are greater than 0
 
     @Test
     public void shouldClickOnWomenLink() {

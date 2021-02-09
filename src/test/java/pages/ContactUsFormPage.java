@@ -7,12 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import utils.BoxDisplayedUtils;
 
 public class ContactUsFormPage extends BasePage {
-
-    public ContactUsFormPage(WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(id = "submitMessage")
     WebElement sendButton;
@@ -35,6 +32,11 @@ public class ContactUsFormPage extends BasePage {
     @FindBy(id = "message")
     WebElement messageTextArea;
 
+
+    public ContactUsFormPage(WebDriver driver) {
+        super(driver);
+    }
+
     public void clickOnSendButton() {
         sendButton.click();
     }
@@ -48,14 +50,17 @@ public class ContactUsFormPage extends BasePage {
         return isAlertBoxDisplayed(redAlertBox);
     }
 
-    private boolean isAlertBoxDisplayed(WebElement box) {
-        wait.until(ExpectedConditions.visibilityOf(box));
+   private boolean isAlertBoxDisplayed(WebElement box) {
+    //    TODO nie jest dostepna metoda: isElementVisible z klasy BoxDisplayedUtils
+        BoxDisplayedUtils.isElementVisible(box);
+
+   /*     wait.until(ExpectedConditions.visibilityOf(box));
         boolean isDisplayed = false;
         try {
             isDisplayed = box.isDisplayed();
         } catch (NoSuchElementException e) {
         }
-        return isDisplayed;
+        return isDisplayed;*/
     }
 
 

@@ -9,12 +9,12 @@ import java.util.stream.Collectors;
 
 public class PopularItemsPage extends BasePage {
 
+    @FindBy(css = "#homefeatured .product-name")
+    List<WebElement> productNames;
+
     public PopularItemsPage(WebDriver driver) {
         super(driver);
     }
-
-    @FindBy(css = "#homefeatured .product-name")
-    List<WebElement> productNames;
 
     public List<String> getProductNames() {
         return productNames.stream()
