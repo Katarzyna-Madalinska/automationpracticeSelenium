@@ -1,6 +1,5 @@
 package tests;
 
-import com.github.javafaker.Faker;
 import model.Address;
 import model.PersonalInformation;
 import org.junit.jupiter.api.*;
