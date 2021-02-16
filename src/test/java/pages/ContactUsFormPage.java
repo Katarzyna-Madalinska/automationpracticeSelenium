@@ -49,7 +49,6 @@ public class ContactUsFormPage extends BasePage {
     }
 
    private boolean isAlertBoxDisplayed(WebElement box) {
-       //    TODO nie jest dostepna metoda: isElementVisible z klasy ElementVisibleUtils
       return  ElementVisibleUtils.isElementVisible(box, wait);
    }
 
