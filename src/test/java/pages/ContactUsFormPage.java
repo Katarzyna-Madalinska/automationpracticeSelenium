@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import utils.BoxDisplayedUtils;
+import utils.ElementVisibleUtils;
 
 public class ContactUsFormPage extends BasePage {
 
@@ -49,18 +49,9 @@ public class ContactUsFormPage extends BasePage {
     }
 
    private boolean isAlertBoxDisplayed(WebElement box) {
-    //    TODO nie jest dostepna metoda: isElementVisible z klasy BoxDisplayedUtils
-        BoxDisplayedUtils.isElementVisible(box);
-
-   /*     wait.until(ExpectedConditions.visibilityOf(box));
-        boolean isDisplayed = false;
-        try {
-            isDisplayed = box.isDisplayed();
-        } catch (NoSuchElementException e) {
-        }
-        return isDisplayed;*/
-    }
-
+       //    TODO nie jest dostepna metoda: isElementVisible z klasy ElementVisibleUtils
+      return  ElementVisibleUtils.isElementVisible(box, wait);
+   }
 
     public void enterEmail(String email) {
         emailInput.sendKeys(email);

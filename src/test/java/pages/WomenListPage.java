@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.ElementVisibleUtils;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -29,6 +30,14 @@ public class WomenListPage extends BasePage {
     }
 
     public boolean isWomenPageDisplayed() {
+        return isAlertBoxDisplayed(navigationPageWomen);
+    }
+
+    private boolean isAlertBoxDisplayed(WebElement box) {
+        return  ElementVisibleUtils.isElementVisible(box, wait);
+    }
+
+/*    public boolean isWomenPageDisplayed() {
         wait.until(ExpectedConditions.visibilityOf(navigationPageWomen));
         boolean isDisplayed = false;
         try {
@@ -36,7 +45,7 @@ public class WomenListPage extends BasePage {
         } catch (NoSuchElementException e) {
         }
         return isDisplayed;
-    }
+    }*/
 
 
     public List<Double> getProductPrices() {

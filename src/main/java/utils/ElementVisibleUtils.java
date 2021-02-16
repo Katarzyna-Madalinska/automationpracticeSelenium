@@ -6,11 +6,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class BoxDisplayedUtils {
-    protected WebDriverWait wait;
+public class ElementVisibleUtils {
 
-
-    public boolean isElementVisible(WebElement elementDisplayed) {
+    public static boolean isElementVisible(WebElement elementDisplayed, WebDriverWait wait) {
         wait.until(ExpectedConditions.visibilityOf(elementDisplayed));
         boolean isDisplayed = false;
         try {

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import utils.ElementVisibleUtils;
 
 public class SignInPage extends BasePage {
 
@@ -92,10 +93,11 @@ public class SignInPage extends BasePage {
         return alertDangerBoxRegisterAccount.getText();
     }
 
-    public void clickOnRadioGenderMrs () {
+    public void clickOnRadioGenderMrs() {
         wait.until(ExpectedConditions.visibilityOf(genderMrsRadio));
         genderMrsRadio.click();
     }
+
     public void clickOnRegisterButton() {
         registerButton.click();
     }
@@ -108,35 +110,24 @@ public class SignInPage extends BasePage {
         newsletterInput.click();
     }
 
-
     public boolean isAlertDangerBoxCreateAccountDisplayed() {
-        wait.until(ExpectedConditions.visibilityOf(alertDangerBoxCreateAccount));
-        boolean isDisplayed = false;
-        try {
-            isDisplayed = alertDangerBoxCreateAccount.isDisplayed();
-        } catch (NoSuchElementException e) {
-        }
-        return isDisplayed;
+        return isAlertBoxDisplayed(alertDangerBoxCreateAccount);
     }
 
     public boolean isAlertDangerBoxRegisterAccountDisplayed() {
-        wait.until(ExpectedConditions.visibilityOf(alertDangerBoxRegisterAccount));
-        boolean isDisplayed = false;
-        try {
-            isDisplayed = alertDangerBoxRegisterAccount.isDisplayed();
-        } catch (NoSuchElementException e) {
-        }
-        return isDisplayed;
+        return isAlertBoxDisplayed(alertDangerBoxRegisterAccount);
     }
 
     public boolean isSignInPageDisplayed() {
-        wait.until(ExpectedConditions.visibilityOf(navigationPageAuthentication));
-        boolean isDisplayed = false;
-        try {
-            isDisplayed = navigationPageAuthentication.isDisplayed();
-        } catch (NoSuchElementException e) {
-        }
-        return isDisplayed;
+        return isAlertBoxDisplayed(navigationPageAuthentication);
+    }
+
+    public boolean isRegisterInfoAccountParagraphDisplayed() {
+        return isAlertBoxDisplayed(registerInfoAccountParagraph);
+    }
+
+    private boolean isAlertBoxDisplayed(WebElement box) {
+        return ElementVisibleUtils.isElementVisible(box, wait);
     }
 
     public void sendPersonalFullInformation(PersonalInformation personalInformation) {
@@ -162,15 +153,5 @@ public class SignInPage extends BasePage {
         countrySelect.selectByIndex(1);
         additionalInformationTextArea.sendKeys(address.getAdditionalInformation());
         mobileInput.sendKeys(address.getMobilePhone());
-    }
-
-    public boolean isRegisterInfoAccountParagraphDisplayed() {
-        wait.until(ExpectedConditions.visibilityOf(registerInfoAccountParagraph));
-        boolean isDisplayed = false;
-        try {
-            isDisplayed = navigationPageAuthentication.isDisplayed();
-        } catch (NoSuchElementException e) {
-        }
-        return isDisplayed;
     }
 }

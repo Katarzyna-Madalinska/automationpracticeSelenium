@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import utils.ElementVisibleUtils;
 
 public class SearchPage extends BasePage {
 
@@ -47,14 +48,11 @@ public class SearchPage extends BasePage {
         searchInput.sendKeys(product);
     }
 
-
     public boolean isSearchBlouseDisplayed() {
-        wait.until(ExpectedConditions.visibilityOf(searchProductCount));
-        boolean isDisplayed = false;
-        try {
-            isDisplayed = searchProductCount.isDisplayed();
-        } catch (NoSuchElementException e) {
-        }
-        return isDisplayed;
+        return isAlertBoxDisplayed(searchProductCount);
+    }
+
+    private boolean isAlertBoxDisplayed(WebElement box) {
+        return  ElementVisibleUtils.isElementVisible(box, wait);
     }
 }
